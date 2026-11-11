@@ -44,6 +44,7 @@ ul, li, a{
 .header__nav .list-item .item a {
     font-size: 22px;
     transition: .4;
+    padding: 10px 0;
 }
 
 .header__nav .list-item .item a:hover{
@@ -61,4 +62,30 @@ ul, li, a{
 
 .header__action i:hover{
     color: #999;
+}
+
+/* nav dropdown */
+.header__nav .list-item .item{
+    position: relative;
+}
+
+.nav__dropdown-product{
+    position: absolute;
+    top: 40px;
+    background-color: chocolate;
+
+    display: none;
+}
+
+.nav__dropdown-product li{
+    padding: 10px 20px;
+}
+
+.header__nav .list-item .item:hover .nav__dropdown-product{
+    display: block;
+    transition: .5;
+}
+
+.nav__dropdown-product li:hover{
+    background-color: aqua;
 }
