@@ -78,16 +78,28 @@
     font-size: 20px;
 }
 
-.products .link__all-product{
+.products .link__all-product,
+.products .link__all-trending,
+.products .link__all-sales{
     display: block;
     margin-top: 40px;
     color: blue;
     font-size: 20px;
     text-decoration: underline;
     text-align: center;
-    width: 100px;
     margin: 30px 50%;
     transform: translateX(-50%);
 }
 
+.products .link__all-product{
+    width: 100px;
+}
+
+.products .link__all-trending{
+    width: 200px;
+}
+
+.products .link__all-sales{
+    width: 170px;
+}
 
