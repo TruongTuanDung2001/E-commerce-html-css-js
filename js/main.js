@@ -134,3 +134,26 @@ productSections.forEach(section => {
 
     updateSlider();
 });
+
+
+
+// Handle from contact section 
+
+const contactForm = document.getElementById("contactForm");
+
+contactForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    if (!name.trim() || !email.trim() || !message.trim()) {
+        alert("Please fill in all required fields!");
+        return;
+    }
+
+    alert("Thank you! Your message has been received.");
+
+    contactForm.reset();
+});

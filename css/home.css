@@ -715,4 +715,23 @@
     transform: translateY(-2px);
 }
 
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 60px 5%;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .contact-info h2 {
+        font-size: 35px;
+    }
+
+    .contact-form {
+        padding: 25px 20px;
+    }
+}
 
