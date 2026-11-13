@@ -1,5 +1,4 @@
 .container {
-  background-color: blue;
   width: 80%;
   margin: 150px auto;
 }
@@ -11,6 +10,7 @@
     min-height: 600px;
     padding: 45px 5%;
     background: #f8f9fa;
+    border-radius: 8px;
 }
 
 .home__container {
