@@ -63,3 +63,74 @@ prevBtn.addEventListener("click", () => {
 
     showSlide(currentIndex);
 });
+
+
+// PRODUCT SECTION
+
+const productSections = document.querySelectorAll(".product-section");
+
+productSections.forEach(section => {
+    const slider = section.querySelector(".product-slider");
+    const track = section.querySelector(".product-track");
+
+    const products = track.querySelectorAll(".product-item");
+
+    const prevBtn = section.querySelector(".slider-btn.prev");
+    const nextBtn = section.querySelector(".slider-btn.next");
+
+    let currentIndex = 0;
+
+    // Update slider
+    function updateSlider() {
+        const sliderWidth = slider.clientWidth;
+
+        const lastProduct = products[products.length - 1];
+
+        const maxTranslate =
+            lastProduct.offsetLeft + lastProduct.offsetWidth -
+            products[0].offsetLeft - sliderWidth;
+
+        const currentTranslate =
+            products[currentIndex].offsetLeft -
+            products[0].offsetLeft;
+
+        track.style.transform =
+            `translateX(-${Math.min(currentTranslate, maxTranslate)}px)`;
+
+        // Update buttons
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex === products.length -
+            Math.floor(sliderWidth / products[0].offsetWidth);
+    }
+
+    // Next
+    nextBtn.addEventListener("click", () => {
+        const visibleCount = Math.floor(
+            slider.clientWidth /
+            (products[0].offsetWidth + parseFloat(getComputedStyle(track).gap))
+        );
+
+        const maxIndex = products.length - Math.max(1, visibleCount);
+
+        if (currentIndex < maxIndex) {
+            currentIndex++;
+            updateSlider();
+        }
+    });
+
+    // Previous
+    prevBtn.addEventListener("click", () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateSlider();
+        }
+    });
+
+    // Responsive
+    window.addEventListener("resize", () => {
+        currentIndex = 0;
+        updateSlider();
+    });
+
+    updateSlider();
+});
