@@ -57,8 +57,9 @@
     </header>
     <!-- container -->
     <div class="container">
+      <!-- Product-detai -->
       <main class="product-detail">
-        <!-- COLUMN 1: THUMBNAIL GALLERY -->
+        <!--  -->
         <section class="product-gallery">
           <button class="gallery-btn prev-btn" id="prevBtn">&#9650;</button>
 
@@ -66,8 +67,7 @@
             <div class="thumbnail-track" id="thumbnailTrack">
               <img
                 src="./assets/images/products/p1.webp"
-                class="thumbnail active"
-                alt="Product 1"
+                class="thumbnail active"alt="Product 1"
               />
 
               <img
@@ -99,7 +99,7 @@
           <button class="gallery-btn next-btn" id="nextBtn">&#9660;</button>
         </section>
 
-        <!-- COLUMN 2: MAIN IMAGE -->
+        <!--  -->
         <section class="main-image-section">
           <div class="main-image-wrapper" id="zoomContainer">
             <img
@@ -110,12 +110,13 @@
           </div>
         </section>
 
-        <!-- COLUMN 3: PRODUCT INFORMATION -->
+        <!--  -->
         <section class="product-info">
           <span class="product-category">PET SHOP</span>
 
-          <h1 class="product-name">Sữa bột cho chó BBN Goat’s Milk New Zealand
-BBN</h1>
+          <h1 class="product-name">
+            Sữa bột cho chó BBN Goat’s Milk New Zealand BBN
+          </h1>
 
           <div class="product-rating">
             <span>★★★★★</span>
@@ -131,9 +132,11 @@ BBN</h1>
           </div>
 
           <p class="product-description">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure nobis dicta accusamus tempore officia officiis et veritatis! Magnam pariatur perferendis iusto natus obcaecati reprehenderit. Quod iusto consequuntur tempora libero aut.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure nobis
+            dicta accusamus tempore officia officiis et veritatis! Magnam
+            pariatur perferendis iusto natus obcaecati reprehenderit. Quod iusto
+            consequuntur tempora libero aut.
           </p>
-
 
           <div class="product-actions">
             <button class="buy-btn" id="buyBtn">BUY NOW</button>
@@ -145,6 +148,118 @@ BBN</h1>
             <p>✓ Free Shipping</p>
             <p>✓ 30 Days Return</p>
             <p>✓ Secure Payment</p>
+          </div>
+        </section>
+
+        <!-- Product related -->
+
+        <section class="related-products">
+          <div class="related-header">
+            <div class="related-title">
+              <span>YOU MAY ALSO LIKE</span>
+              <h2>Related Products</h2>
+            </div>
+
+            <div class="slider-controls">
+              <button class="slider-btn prev" id="prevProduct">&#10094;</button>
+
+              <button class="slider-btn next" id="nextProduct">&#10095;</button>
+            </div>
+          </div>
+
+          <div class="products-container">
+            <div class="products-track" id="productsTrack">
+              <!-- PRODUCT 1 -->
+              <div class="product-card">
+                <div class="product-image">
+                  <img
+                    src="./assets/images/products/p10.webp"
+                    alt="Nike Air Max"
+                  />
+                </div>
+
+                <div class="product-content">
+                  <h3>Nike Air Max Red</h3>
+                  <p>$120.00</p>
+                </div>
+              </div>
+
+              <!-- PRODUCT 2 -->
+              <div class="product-card">
+                <div class="product-image">
+                  <img
+                    src="./assets/images/products/p11.webp"
+                    alt="Nike Shoes"
+                  />
+                </div>
+
+                <div class="product-content">
+                  <h3>Nike Air Max Black</h3>
+                  <p>$135.00</p>
+                </div>
+              </div>
+
+              <!-- PRODUCT 3 -->
+              <div class="product-card">
+                <div class="product-image">
+                  <img
+                    src="./assets/images/products/p12.webp"
+                    alt="Adidas Shoes"
+                  />
+                </div>
+
+                <div class="product-content">
+                  <h3>Adidas Street Style</h3>
+                  <p>$110.00</p>
+                </div>
+              </div>
+
+              <!-- PRODUCT 4 -->
+              <div class="product-card">
+                <div class="product-image">
+                  <img
+                    src="./assets/images/products/p13.webp"
+                    alt="Sport Shoes"
+                  />
+                </div>
+
+                <div class="product-content">
+                  <h3>Sport Running Shoes</h3>
+                  <p>$150.00</p>
+                </div>
+              </div>
+
+              <!-- PRODUCT 5 -->
+              <div class="product-card">
+                <div class="product-image">
+                  <img
+                    src="./assets/images/products/p14.webp"
+                    alt="Casual Shoes"
+                  />
+                </div>
+
+                <div class="product-content">
+                  <h3>Casual Sneakers</h3>
+                  <p>$99.00</p>
+                </div>
+              </div>
+
+              <!-- PRODUCT 6 -->
+              <div class="product-card">
+                <div class="product-image">
+                  <img
+                    src="./assets/images/products/p15.webp"
+                    alt="Classic Shoes"
+                  />
+                </div>
+
+                <div class="product-content">
+                  <h3>Classic Sneakers</h3>
+                  <p>$125.00</p>
+                </div>
+              </div>
+            </div>
+            <a class="all-product" href="#">All Product</a>
           </div>
         </section>
       </main>
@@ -217,6 +332,6 @@ BBN</h1>
     </footer>
 
     <!-- script -->
-     <script src="./js/pages/productDetail.js"></script>
+    <script src="./js/pages/productDetail.js"></script>
   </body>
 </html>
