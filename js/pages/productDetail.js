@@ -25,46 +25,74 @@ const visibleImages = 3;
 const totalImages = thumbnails.length;
 
 
+
 function updateGallery() {
 
     // Update thumbnail active
     thumbnails.forEach((thumbnail, index) => {
-
         thumbnail.classList.toggle(
             "active",
             index === currentIndex
         );
-
     });
 
     // Update main image
     mainImage.src = thumbnails[currentIndex].src;
 
-    // Reset zoom
     mainImage.style.transform = "scale(1)";
     mainImage.style.transformOrigin = "center center";
 
-    // Calculate thumbnail position
-    const thumbnailHeight = thumbnails[0].offsetHeight;
+    // Check responsive
+    const isMobile = window.matchMedia(
+        "(max-width: 600px)"
+    ).matches;
 
-    const gap = 15;
+    const gap = isMobile ? 10 : 15;
 
-    const translateY =
-        Math.min(
-            currentIndex,
-            totalImages - visibleImages
-        ) * (thumbnailHeight + gap);
+    if (isMobile) {
 
-    thumbnailTrack.style.transform =
-        `translateY(-${translateY}px)`;
+        // Horizontal gallery
+        const thumbnailWidth =
+            thumbnails[0].offsetWidth;
 
-    // Disable buttons at boundaries
+        const maxTranslate =
+            thumbnailTrack.scrollWidth -
+            thumbnailTrack.parentElement.clientWidth;
+
+        const translateX = Math.min(
+            currentIndex * (thumbnailWidth + gap),
+            maxTranslate
+        );
+
+        thumbnailTrack.style.transform =
+            `translateX(-${translateX}px)`;
+
+    } else {
+
+        // Vertical gallery
+        const thumbnailHeight =
+            thumbnails[0].offsetHeight;
+
+        const maxTranslate =
+            thumbnailTrack.scrollHeight -
+            thumbnailTrack.parentElement.clientHeight;
+
+        const translateY = Math.min(
+            currentIndex * (thumbnailHeight + gap),
+            maxTranslate
+        );
+
+        thumbnailTrack.style.transform =
+            `translateY(-${translateY}px)`;
+    }
+
+    // Disable buttons
     prevBtn.disabled = currentIndex === 0;
 
     nextBtn.disabled =
         currentIndex === totalImages - 1;
-
 }
+
 
 
 // Previous image

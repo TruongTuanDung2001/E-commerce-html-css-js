@@ -269,36 +269,55 @@ button {
     }
 }
 
+
 @media (max-width: 600px) {
+
     .product-detail {
         width: 95%;
         grid-template-columns: 1fr;
         gap: 20px;
     }
 
-    .product-gallery {
-        order: 2;
-    }
-
     .main-image-section {
         order: 1;
+    }
+
+    .product-gallery {
+        order: 2;
+
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
     }
 
     .product-info {
         order: 3;
     }
 
+    /* Thumbnail container */
+
     .thumbnail-container {
+        width: calc(100% - 90px);
         height: 100px;
     }
 
     .thumbnail-track {
         flex-direction: row;
+        gap: 10px;
     }
 
     .thumbnail {
         width: 100px;
         height: 90px;
+        flex: 0 0 100px;
+    }
+
+    /* Hai nút trái phải */
+
+    .gallery-btn {
+        width: 35px;
+        height: 35px;
         flex-shrink: 0;
     }
 
@@ -308,7 +327,6 @@ button {
 }
 
 
-/* Product related */
 
 /* RELATED PRODUCTS */
 
