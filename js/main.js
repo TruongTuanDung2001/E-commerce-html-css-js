@@ -6,7 +6,6 @@ async function loadHeader() {
         if (!response.ok) {
             throw new Error("Cannot load header");
         }
-        console.log("co header");
         
         const html = await response.text();
 
@@ -19,6 +18,24 @@ async function loadHeader() {
 
 loadHeader();
 
+// load footer
+async function loadFooter() {
+    try {
+        const response = await fetch("./components/footer.html");
+
+        if (!response.ok) {
+            throw new Error("Cannot load footer");
+        }
+        
+        const html = await response.text();
+
+        document.querySelector("#footer").innerHTML = html;
+
+    } catch (error) {
+        console.error("Error loading footer:", error);
+    }
+}
+loadFooter();
 
 //
 const slides = document.querySelectorAll(".slider__image");
