@@ -351,14 +351,18 @@ checkoutForm.addEventListener("submit", (e) => {
     localStorage.removeItem("checkoutItems");
 
 
-    alert(
-        `Order placed successfully!\n` +
-        `Order ID: ${order.orderId}\n` +
-        `Total: ${formatPrice(totalPayment)}`
-    );
+    // alert(
+    //     `Order placed successfully!\n` +
+    //     `Order ID: ${order.orderId}\n` +
+    //     `Total: ${formatPrice(totalPayment)}`
+    // );
 
     // Sau này có thể chuyển sang order-success.html
     // window.location.href = "./order-success.html";
+
+    localStorage.setItem("orders", JSON.stringify(orders));
+
+    window.location.href = "order.html";
 
 });
 
