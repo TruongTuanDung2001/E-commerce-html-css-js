@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Detail Page</title>
+    <!-- links -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+      integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/productDetail.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header__container">
+        <div class="header__logo">
+          <img
+            src="https://i.pinimg.com/736x/83/23/fb/8323fb6664afa3079a41049992c91051.jpg"
+            alt="logo"
+          />
+        </div>
+        <div class="header__nav">
+          <ul class="list-item">
+            <li class="item"><a href="#">Home</a></li>
+            <li class="item">
+              <a href="#">Products</a>
+              <ul class="nav__dropdown-product">
+                <li class="item-product"><a href="#">Trending</a></li>
+                <li class="item-product"><a href="#">Best-selling</a></li>
+                <li class="item-product"><a href="#">Sales</a></li>
+              </ul>
+            </li>
+            <li class="item"><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="header__action">
+          <div class="header__cart">
+            <a href="#">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+          </div>
+          <div class="header__profile">
+            <a href="#">
+              <i class="fa-regular fa-user"></i>
+            </a>
+          </div>
+          <div class="header__login"></div>
+        </div>
+      </div>
+    </header>
+    <!-- container -->
+    <div class="container">
+      <main class="product-detail">
+        <!-- COLUMN 1: THUMBNAIL GALLERY -->
+        <section class="product-gallery">
+          <button class="gallery-btn prev-btn" id="prevBtn">&#9650;</button>
+
+          <div class="thumbnail-container">
+            <div class="thumbnail-track" id="thumbnailTrack">
+              <img
+                src="./assets/images/products/p1.webp"
+                class="thumbnail active"
+                alt="Product 1"
+              />
+
+              <img
+                src="./assets/images/products/p2.webp"
+                class="thumbnail"
+                alt="Product 2"
+              />
+
+              <img
+                src="./assets/images/products/p3.webp"
+                class="thumbnail"
+                alt="Product 3"
+              />
+
+              <img
+                src="./assets/images/products/p4.webp"
+                class="thumbnail"
+                alt="Product 4"
+              />
+
+              <img
+                src="./assets/images/products/p5.webp"
+                class="thumbnail"
+                alt="Product 5"
+              />
+            </div>
+          </div>
+
+          <button class="gallery-btn next-btn" id="nextBtn">&#9660;</button>
+        </section>
+
+        <!-- COLUMN 2: MAIN IMAGE -->
+        <section class="main-image-section">
+          <div class="main-image-wrapper" id="zoomContainer">
+            <img
+              src="./assets/images/products/p1.webp"
+              id="mainImage"
+              alt="Product Image"
+            />
+          </div>
+        </section>
+
+        <!-- COLUMN 3: PRODUCT INFORMATION -->
+        <section class="product-info">
+          <span class="product-category">PET SHOP</span>
+
+          <h1 class="product-name">Sữa bột cho chó BBN Goat’s Milk New Zealand
+BBN</h1>
+
+          <div class="product-rating">
+            <span>★★★★★</span>
+            <small>(120 Reviews)</small>
+          </div>
+
+          <div class="product-price">
+            <span class="sale-price">$120.00</span>
+
+            <span class="original-price">$180.00</span>
+
+            <span class="discount">-33%</span>
+          </div>
+
+          <p class="product-description">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure nobis dicta accusamus tempore officia officiis et veritatis! Magnam pariatur perferendis iusto natus obcaecati reprehenderit. Quod iusto consequuntur tempora libero aut.
+          </p>
+
+
+          <div class="product-actions">
+            <button class="buy-btn" id="buyBtn">BUY NOW</button>
+
+            <button class="favorite-btn" id="favoriteBtn">♡</button>
+          </div>
+
+          <div class="product-extra">
+            <p>✓ Free Shipping</p>
+            <p>✓ 30 Days Return</p>
+            <p>✓ Secure Payment</p>
+          </div>
+        </section>
+      </main>
+    </div>
+    <!-- Footer -->
+    <footer>
+      <footer class="footer">
+        <div class="footer-container">
+          <!-- Column 1: Logo -->
+          <div class="footer-logo">
+            <a href="#" class="logo">
+              <span class="logo-icon">🐾</span>
+              <span>PET<span class="logo-highlight">CARE</span></span>
+            </a>
+
+            <p>
+              Love and care for your lovely pets. Making every pet's life
+              happier!
+            </p>
+          </div>
+
+          <!-- Column 2: Social Media -->
+          <div class="footer-social">
+            <h3>Follow Us</h3>
+
+            <div class="social-icons">
+              <a href="#" aria-label="Facebook" class="facebook-icon">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+
+              <a href="#" aria-label="Zalo" class="zalo">
+                <span class="zalo-icon">Zalo</span>
+              </a>
+
+              <a href="#" aria-label="Instagram" class="instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+
+              <a href="#" aria-label="Youtube" class="youtube">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </div>
+
+            <div class="footer-contact">
+              <p><i class="fa-solid fa-phone"></i> +84 123 456 789</p>
+              <p><i class="fa-solid fa-envelope"></i> hello@petcare.com</p>
+            </div>
+          </div>
+
+          <!-- Column 3: Payment -->
+          <div class="footer-payment">
+            <h3>Payment Methods</h3>
+
+            <div class="payment-methods">
+              <div class="payment-card visa">VISA</div>
+              <div class="payment-card mastercard">
+                <span></span><span></span>
+              </div>
+              <div class="payment-card cod">COD</div>
+            </div>
+
+            <p>Secure and convenient payment</p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 PetCare. All rights reserved.</p>
+        </div>
+      </footer>
+    </footer>
+
+    <!-- script -->
+     <script src="./js/pages/productDetail.js"></script>
+  </body>
+</html>
