@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart Page</title>
+    <!-- links -->
+    <link rel="stylesheet" href="./css/cart.css" />
+  </head>
+
+  <body>
+    <!-- Main -->
+    <main class="cart-page">
+      <!--  -->
+      <div class="cart-header">
+        <div>
+          <span class="cart-subtitle">PET SHOP COLLECTION</span>
+          <h1>My Cart</h1>
+          <p>Manage your lovely pet's shopping cart.</p>
+        </div>
+        <a href="./index.html" class="back-home">
+          <span>←</span>
+          Back Home
+        </a>
+      </div>
+
+      <!--  -->
+      <section class="cart-container">
+        <div class="cart-table-wrapper">
+          <table class="cart-table">
+            <thead>
+              <tr>
+                <th class="checkbox-col"></th>
+                <th>Image</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Sale</th>
+                <th>Quantity</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+
+            <tbody id="cartItems">
+              <!--  -->
+              <tr class="cart-row" data-id="1">
+                <td>
+                  <input type="checkbox" class="product-checkbox" checked />
+                </td>
+                <td>
+                  <img
+                    src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?w=200"
+                    class="cart-image"
+                    alt="Dog Food"
+                  />
+                </td>
+                <td>
+                  <div class="cart-product-info">
+                    <h3>Premium Dog Food</h3>
+                    <span>Dog Food</span>
+                  </div>
+                </td>
+                <td class="price" data-price="450000">450.000đ</td>
+                <td class="sale" data-sale="50000">50.000đ</td>
+                <td>
+                  <div class="quantity-control">
+                    <button class="quantity-btn decrease">−</button>
+                    <input
+                      type="number"
+                      class="quantity-input"
+                      value="1"
+                      min="1"
+                    />
+                    <button class="quantity-btn increase">+</button>
+                  </div>
+                </td>
+                <td class="item-total">400.000đ</td>
+              </tr>
+
+              <!--  -->
+              <tr class="cart-row" data-id="2">
+                <td>
+                  <input type="checkbox" class="product-checkbox" checked />
+                </td>
+                <td>
+                  <img
+                    src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=200"
+                    class="cart-image"
+                    alt="Cat Food"
+                  />
+                </td>
+                <td>
+                  <div class="cart-product-info">
+                    <h3>Premium Cat Food</h3>
+                    <span>Cat Food</span>
+                  </div>
+                </td>
+                <td class="price" data-price="350000">350.000đ</td>
+                <td class="sale" data-sale="0">0đ</td>
+                <td>
+                  <div class="quantity-control">
+                    <button class="quantity-btn decrease">−</button>
+                    <input
+                      type="number"
+                      class="quantity-input"
+                      value="2"
+                      min="1"
+                    />
+                    <button class="quantity-btn increase">+</button>
+                  </div>
+                </td>
+                <td class="item-total">700.000đ</td>
+              </tr>
+
+              <!--  -->
+              <tr class="cart-row" data-id="3">
+                <td>
+                  <input type="checkbox" class="product-checkbox" checked />
+                </td>
+                <td>
+                  <img
+                    src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=200"
+                    class="cart-image"
+                    alt="Pet Toy"
+                  />
+                </td>
+                <td>
+                  <div class="cart-product-info">
+                    <h3>Interactive Pet Toy</h3>
+                    <span>Toys</span>
+                  </div>
+                </td>
+                <td class="price" data-price="150000">150.000đ</td>
+                <td class="sale" data-sale="20000">20.000đ</td>
+                <td>
+                  <div class="quantity-control">
+                    <button class="quantity-btn decrease">−</button>
+                    <input
+                      type="number"
+                      class="quantity-input"
+                      value="1"
+                      min="1"
+                    />
+                    <button class="quantity-btn increase">+</button>
+                  </div>
+                </td>
+                <td class="item-total">130.000đ</td>
+              </tr>
+
+              <!--  -->
+              <tr class="cart-row" data-id="4">
+                <td>
+                  <input type="checkbox" class="product-checkbox" />
+                </td>
+                <td>
+                  <img
+                    src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=200"
+                    class="cart-image"
+                    alt="Pet Accessories"
+                  />
+                </td>
+                <td>
+                  <div class="cart-product-info">
+                    <h3>Premium Pet Accessories</h3>
+                    <span>Accessories</span>
+                  </div>
+                </td>
+                <td class="price" data-price="250000">250.000đ</td>
+                <td class="sale" data-sale="0">0đ</td>
+                <td>
+                  <div class="quantity-control">
+                    <button class="quantity-btn decrease">−</button>
+                    <input
+                      type="number"
+                      class="quantity-input"
+                      value="1"
+                      min="1"
+                    />
+                    <button class="quantity-btn increase">+</button>
+                  </div>
+                </td>
+                <td class="item-total">250.000đ</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Checkout -->
+        <section class="checkout-summary">
+          <div class="selected-products">
+            <span>Selected Products</span>
+
+            <h2>
+              <span id="selectedCount">3</span>
+              <small>items selected</small>
+            </h2>
+          </div>
+
+          <div class="checkout-right">
+            <div class="total-price">
+              <span>Total Payment</span>
+              <h2 id="grandTotal">1.230.000đ</h2>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">
+              Proceed to Checkout
+              <span>→</span>
+            </button>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <!--  -->
+    <script src="./js/pages/cart.js"></script>
+  </body>
+</html>
