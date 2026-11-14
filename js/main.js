@@ -1,4 +1,26 @@
+// load header
+async function loadHeader() {
+    try {
+        const response = await fetch("./components/header.html");
 
+        if (!response.ok) {
+            throw new Error("Cannot load header");
+        }
+        console.log("co header");
+        
+        const html = await response.text();
+
+        document.querySelector("#header").innerHTML = html;
+
+    } catch (error) {
+        console.error("Error loading header:", error);
+    }
+}
+
+loadHeader();
+
+
+//
 const slides = document.querySelectorAll(".slider__image");
 
 const prevBtn = document.querySelector(".slider__prev");
@@ -157,3 +179,5 @@ contactForm.addEventListener("submit", function(e) {
 
     contactForm.reset();
 });
+
+
