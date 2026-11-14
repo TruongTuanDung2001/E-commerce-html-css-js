@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <!-- links -->
+    <link rel="stylesheet" href="./css/checkout.css">
+</head>
+
+<body>
+    <main class="checkout-page">
+        <!-- HEADER -->
+        <div class="checkout-header">
+            <div class="checkout-title">
+                <span>PET SHOP COLLECTION</span>
+                <h1>Checkout</h1>
+                <p>Complete your order and make your pets happy.</p>
+            </div>
+
+            <div class="back-actions">
+                <a href="./cart.html" class="back-btn">
+                    ← Back to Cart
+                </a>
+                <a href="./index.html" class="home-btn">
+                    Back Home
+                </a>
+            </div>
+
+        </div>
+
+        <!-- CHECKOUT CONTENT -->
+        <div class="checkout-content">
+            <!-- LEFT: CUSTOMER INFORMATION -->
+            <section class="customer-section">
+                <div class="section-heading">
+                    <h2>Customer Information</h2>
+                    <p>Please enter your shipping information.</p>
+                </div>
+
+                <form id="checkoutForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input
+                            type="text"
+                            id="fullName"
+                            placeholder="Enter your full name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="example@email.com"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                placeholder="Enter your phone"
+                                required
+                            >
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="address">Address *</label>
+                        <input
+                            type="text"
+                            id="address"
+                            placeholder="Street, building, house number"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company">Address / Company</label>
+                        <input
+                            type="text"
+                            id="company"
+                            placeholder="Apartment, company or additional address"
+                        >
+                    </div>
+
+                    <!-- PAYMENT METHOD -->
+                    <div class="payment-section">
+                        <div class="section-heading">
+                            <h2>Payment Method</h2>
+                            <p>Choose your preferred payment method.</p>
+                        </div>
+
+
+                        <div class="payment-options">
+                            <label class="payment-option active">
+                                <input
+                                    type="radio"
+                                    name="payment"
+                                    value="cod"
+                                    checked
+                                >
+
+                                <span class="payment-icon">📦</span>
+                                <span class="payment-text">
+                                    <strong>Cash on Delivery</strong>
+                                    <small>Pay when your order arrives.</small>
+                                </span>
+                            </label>
+
+                            <label class="payment-option">
+                                <input
+                                    type="radio"
+                                    name="payment"
+                                    value="bank"
+                                >
+                                <span class="payment-icon">🏦</span>
+                                <span class="payment-text">
+                                    <strong>Bank Transfer</strong>
+                                    <small>Transfer money through your bank.</small>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+
+            <!-- RIGHT: ORDER SUMMARY -->
+            <aside class="order-section">
+                <div class="order-heading">
+                    <h2>Your Order</h2>
+                    <span id="orderCount">0 items</span>
+                </div>
+
+                <!-- PRODUCTS -->
+                <div class="order-products" id="orderProducts">
+
+                    <!-- Products rendered by JavaScript -->
+
+                </div>
+
+                <!-- PRICE SUMMARY -->
+                <div class="price-summary">
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <strong id="subtotal">0đ</strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Shipping Fee</span>
+                        <strong id="shippingFee">0đ</strong>
+                    </div>
+
+                    <div class="summary-row discount-row">
+                        <span>Discount</span>
+                        <strong id="discount">0đ</strong>
+                    </div>
+
+                </div>
+
+                <!-- GRAND TOTAL -->
+                <div class="grand-total">
+
+                    <span>Total Payment</span>
+
+                    <h2 id="grandTotal">0đ</h2>
+
+                </div>
+
+                <!-- CONFIRM BUTTON -->
+                <button type="submit" form="checkoutForm" class="confirm-btn" id="confirmBtn">
+                    Confirm Order
+                    <span>→</span>
+                </button>
+                <p class="secure-note">
+                    Your order information is protected and secure.
+                </p>
+            </aside>
+        </div>
+    </main>
+    <script src="./js/checkout.js"></script>
+</body>
+</html>
