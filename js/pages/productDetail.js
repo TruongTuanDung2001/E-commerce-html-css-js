@@ -194,3 +194,96 @@ buyBtn.addEventListener("click", () => {
 // Initial render
 
 updateGallery();
+
+
+
+// Product related
+
+const productsTrack = document.getElementById("productsTrack");
+
+const productsContainer = document.querySelector(".products-container");
+
+const prevProduct = document.getElementById("prevProduct");
+
+const nextProduct = document.getElementById("nextProduct");
+
+let currentTranslate = 0;
+
+
+// Calculate maximum movement
+function getMaxTranslate() {
+
+    return productsTrack.scrollWidth - productsContainer.clientWidth;
+
+}
+
+
+// Update slider
+function updateProductSlider() {
+
+    const maxTranslate = getMaxTranslate();
+
+    // Prevent moving beyond boundaries
+    currentTranslate = Math.max(
+        0,
+        Math.min(currentTranslate, maxTranslate)
+    );
+
+    productsTrack.style.transform =
+        `translateX(-${currentTranslate}px)`;
+
+    // Disable buttons
+    prevProduct.disabled = currentTranslate <= 0;
+
+    nextProduct.disabled =
+        currentTranslate >= maxTranslate - 1;
+
+}
+
+
+// Move right
+nextProduct.addEventListener("click", () => {
+
+    const firstCard = productsTrack.querySelector(".product-card");
+
+    const gap = parseFloat(
+        getComputedStyle(productsTrack).gap
+    );
+
+    const step = firstCard.offsetWidth + gap;
+
+    currentTranslate += step;
+
+    updateProductSlider();
+
+});
+
+
+// Move left
+prevProduct.addEventListener("click", () => {
+
+    const firstCard = productsTrack.querySelector(".product-card");
+
+    const gap = parseFloat(
+        getComputedStyle(productsTrack).gap
+    );
+
+    const step = firstCard.offsetWidth + gap;
+
+    currentTranslate -= step;
+
+    updateProductSlider();
+
+});
+
+
+// Handle responsive
+window.addEventListener("resize", () => {
+
+    updateProductSlider();
+
+});
+
+
+// Initial state
+updateProductSlider();
