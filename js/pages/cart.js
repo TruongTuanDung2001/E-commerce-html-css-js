@@ -168,13 +168,56 @@ cartItems.addEventListener("change", (e) => {
    CHECKOUT
 ========================= */
 
+
 checkoutBtn.addEventListener("click", () => {
 
     const selectedRows = document.querySelectorAll(
-        ".cart-row .product-checkbox:checked"
+        ".cart-row"
     );
 
-    if (selectedRows.length === 0) {
+    const selectedProducts = [];
+
+    selectedRows.forEach(row => {
+
+        const checkbox = row.querySelector(
+            ".product-checkbox"
+        );
+
+        if (!checkbox.checked) return;
+
+        const quantity = Number(
+            row.querySelector(".quantity-input").value
+        );
+
+        const product = {
+
+            id: Number(row.dataset.id),
+
+            name: row.querySelector(
+                ".cart-product-info h3"
+            ).textContent,
+
+            image: row.querySelector(
+                ".cart-image"
+            ).src,
+
+            price: Number(
+                row.querySelector(".price").dataset.price
+            ),
+
+            sale: Number(
+                row.querySelector(".sale").dataset.sale
+            ),
+
+            quantity: quantity
+
+        };
+
+        selectedProducts.push(product);
+
+    });
+
+    if (selectedProducts.length === 0) {
 
         alert("Please select at least one product!");
 
@@ -182,15 +225,15 @@ checkoutBtn.addEventListener("click", () => {
 
     }
 
-    alert(
-        `You selected ${selectedRows.length} products.\n` +
-        `Total payment: ${grandTotal.textContent}`
+    localStorage.setItem(
+        "checkoutItems",
+        JSON.stringify(selectedProducts)
     );
 
-    // Later:
-    // window.location.href = "./checkout.html";
+    window.location.href = "./checkout.html";
 
 });
+
 
 
 /* =========================
