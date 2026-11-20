@@ -1,3 +1,4 @@
+import {getProducts} from '../services/productService.js';
 /* =========================
    PRODUCT DATA
 ========================= */
