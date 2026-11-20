@@ -1,3 +1,4 @@
+
 import { getProducts } from './services/productService.js';
 
 // load header
@@ -8,7 +9,7 @@ async function loadHeader() {
         if (!response.ok) {
             throw new Error("Cannot load header");
         }
-        
+
         const html = await response.text();
 
         document.querySelector("#header").innerHTML = html;
@@ -28,7 +29,7 @@ async function loadFooter() {
         if (!response.ok) {
             throw new Error("Cannot load footer");
         }
-        
+
         const html = await response.text();
 
         document.querySelector("#footer").innerHTML = html;
@@ -108,73 +109,65 @@ prevBtn.addEventListener("click", () => {
 
 // PRODUCT SECTION
 
-const productSections = document.querySelectorAll(".product-section");
 
-productSections.forEach(section => {
-    const slider = section.querySelector(".product-slider");
-    const track = section.querySelector(".product-track");
+function initProductSliders() {
+    const productSections = document.querySelectorAll(".product-section");
 
-    const products = track.querySelectorAll(".product-item");
+    productSections.forEach(section => {
+        const slider = section.querySelector(".product-slider");
+        const track = section.querySelector(".product-track");
 
-    const prevBtn = section.querySelector(".slider-btn.prev");
-    const nextBtn = section.querySelector(".slider-btn.next");
+        const products = track.querySelectorAll(".product-item");
 
-    let currentIndex = 0;
+        const prevBtn = section.querySelector(".slider-btn.prev");
+        const nextBtn = section.querySelector(".slider-btn.next");
 
-    // Update slider
-    function updateSlider() {
-        const sliderWidth = slider.clientWidth;
+        // Không có sản phẩm thì không khởi tạo slider
+        if (!slider || !track || products.length === 0 || !prevBtn || !nextBtn) {
+            return;
+        }
 
-        const lastProduct = products[products.length - 1];
+        let currentIndex = 0;
 
-        const maxTranslate =
-            lastProduct.offsetLeft + lastProduct.offsetWidth -
-            products[0].offsetLeft - sliderWidth;
+        function updateSlider() {
+            const sliderWidth = slider.clientWidth;
+            const productWidth = products[0].offsetWidth;
 
-        const currentTranslate =
-            products[currentIndex].offsetLeft -
-            products[0].offsetLeft;
+            const gap = parseFloat(getComputedStyle(track).gap) || 0;
 
-        track.style.transform =
-            `translateX(-${Math.min(currentTranslate, maxTranslate)}px)`;
+            const visibleCount = Math.max(
+                1,
+                Math.floor((sliderWidth + gap) / (productWidth + gap))
+            );
 
-        // Update buttons
-        prevBtn.disabled = currentIndex === 0;
-        nextBtn.disabled = currentIndex === products.length -
-            Math.floor(sliderWidth / products[0].offsetWidth);
-    }
+            const maxIndex = Math.max(0, products.length - visibleCount);
 
-    // Next
-    nextBtn.addEventListener("click", () => {
-        const visibleCount = Math.floor(
-            slider.clientWidth /
-            (products[0].offsetWidth + parseFloat(getComputedStyle(track).gap))
-        );
+            currentIndex = Math.min(currentIndex, maxIndex);
 
-        const maxIndex = products.length - Math.max(1, visibleCount);
+            const currentTranslate =
+                products[currentIndex].offsetLeft - products[0].offsetLeft;
 
-        if (currentIndex < maxIndex) {
+            track.style.transform = `translateX(-${currentTranslate}px)`;
+
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex >= maxIndex;
+        }
+
+        nextBtn.addEventListener("click", () => {
             currentIndex++;
             updateSlider();
-        }
-    });
+        });
 
-    // Previous
-    prevBtn.addEventListener("click", () => {
-        if (currentIndex > 0) {
+        prevBtn.addEventListener("click", () => {
             currentIndex--;
             updateSlider();
-        }
-    });
+        });
 
-    // Responsive
-    window.addEventListener("resize", () => {
-        currentIndex = 0;
+        window.addEventListener("resize", updateSlider);
+
         updateSlider();
     });
-
-    updateSlider();
-});
+}
 
 
 
@@ -182,7 +175,7 @@ productSections.forEach(section => {
 
 const contactForm = document.getElementById("contactForm");
 
-contactForm.addEventListener("submit", function(e) {
+contactForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
     const name = document.getElementById("name").value;
@@ -199,11 +192,50 @@ contactForm.addEventListener("submit", function(e) {
     contactForm.reset();
 });
 
+
 // get data products api
-async function initProducts(){
+async function initProducts() {
     const products = await getProducts();
 
     console.log(products);
-    
+
+    const track = document.querySelector(".product-track");
+
+    if (!track) return;
+
+    track.innerHTML = "";
+
+    products.forEach(p => {
+        track.innerHTML += `
+            <a href="#" class="product-item">
+                <div class="product-image">
+                    <span class="product-badge">Trending</span>
+                    <img src="${p.image}" alt="${p.name}" />
+                </div>
+
+                <div class="product-info">
+                    <span class="product-category">${p.category}</span>
+
+                    <h3 class="product-name">${p.name}</h3>
+
+                    <p class="product-description">
+                        ${p.description}
+                    </p>
+
+                    <div class="product-bottom">
+                        <span class="product-price">
+                            ${Number(p.price).toLocaleString("vi-VN")}đ
+                        </span>
+
+                        <span class="buy-btn">Buy Now</span>
+                    </div>
+                </div>
+            </a>
+        `;
+    });
+
+    // Chỉ khởi tạo slider sau khi render xong sản phẩm
+    initProductSliders();
 }
+
 initProducts();
