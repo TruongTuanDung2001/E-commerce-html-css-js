@@ -1,3 +1,5 @@
+import { getProducts } from './services/productService.js';
+
 // load header
 async function loadHeader() {
     try {
@@ -197,4 +199,11 @@ contactForm.addEventListener("submit", function(e) {
     contactForm.reset();
 });
 
+// get data products api
+async function initProducts(){
+    const products = await getProducts();
 
+    console.log(products);
+    
+}
+initProducts();
