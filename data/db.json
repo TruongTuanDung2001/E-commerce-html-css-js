@@ -1,0 +1,65 @@
+
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Premium Dog Food",
+      "category": "Dog Food",
+      "description": "High quality food for adult dogs.",
+      "price": 450000,
+      "oldPrice": 550000,
+      "image": "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?w=600",
+      "isFavorite": false
+    },
+    {
+      "id": 2,
+      "name": "Organic Puppy Food",
+      "category": "Dog Food",
+      "description": "Nutritious food for growing puppies.",
+      "price": 320000,
+      "oldPrice": 400000,
+      "image": "https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=600",
+      "isFavorite": false
+    },
+    {
+      "id": 3,
+      "name": "BBN Goat's Milk",
+      "category": "Dog Food",
+      "description": "Premium goat milk for dogs.",
+      "price": 250000,
+      "oldPrice": 300000,
+      "image": "https://images.unsplash.com/photo-1552053831-71594a27632d?w=600",
+      "isFavorite": false
+    },
+    {
+      "id": 4,
+      "name": "Salmon Cat Food",
+      "category": "Cat Food",
+      "description": "Healthy salmon food for cats.",
+      "price": 350000,
+      "oldPrice": 420000,
+      "image": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=600",
+      "isFavorite": false
+    },
+    {
+      "id": 5,
+      "name": "Interactive Dog Toy",
+      "category": "Toys",
+      "description": "Fun interactive toy for dogs.",
+      "price": 150000,
+      "oldPrice": 190000,
+      "image": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600",
+      "isFavorite": false
+    },
+    {
+      "id": 6,
+      "name": "Pet Travel Bag",
+      "category": "Accessories",
+      "description": "Comfortable pet travel bag.",
+      "price": 650000,
+      "oldPrice": 750000,
+      "image": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600",
+      "isFavorite": false
+    }
+  ]
+}
