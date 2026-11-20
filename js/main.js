@@ -1,4 +1,3 @@
-
 import { getProducts } from './services/productService.js';
 
 // load header
@@ -196,42 +195,51 @@ contactForm.addEventListener("submit", function (e) {
 // get data products api
 async function initProducts() {
     const products = await getProducts();
-
+    
     console.log(products);
+    
+    const productSections = document.querySelectorAll(".product-section");
 
-    const track = document.querySelector(".product-track");
+    productSections.forEach(section => {
+        const track = section.querySelector(".product-track");
+        
+        if(!track) return;
 
-    if (!track) return;
+        // lấy cate của section để so sanh
+        const category = section.dataset.category;
+        console.log(category);
+        
+        // lọc sản phẩm
+        const filterProducts = products.filter(p => {
+            return p.category === category;
+        });
+        console.log(filterProducts);
+        
+        track.innerHTML = "";
 
-    track.innerHTML = "";
-
-    products.forEach(p => {
-        track.innerHTML += `
-            <a href="#" class="product-item">
-                <div class="product-image">
-                    <span class="product-badge">Trending</span>
-                    <img src="${p.image}" alt="${p.name}" />
-                </div>
-
-                <div class="product-info">
-                    <span class="product-category">${p.category}</span>
-
-                    <h3 class="product-name">${p.name}</h3>
-
-                    <p class="product-description">
-                        ${p.description}
-                    </p>
-
-                    <div class="product-bottom">
-                        <span class="product-price">
-                            ${Number(p.price).toLocaleString("vi-VN")}đ
-                        </span>
-
-                        <span class="buy-btn">Buy Now</span>
+        filterProducts.forEach(p => {
+            track.innerHTML += `
+                <a href="#" class="product-item">
+                    <div class="product-image">
+                        <span class="product-badge">Trending</span>
+                        <img src="${p.image}" alt="${p.name}" />
                     </div>
-                </div>
-            </a>
-        `;
+
+                    <div class="product-info">
+                        <span class="product-category">${p.category}</span>
+                        <h3 class="product-name">${p.name}</h3>
+                        <p class="product-description">${p.description}</p>
+
+                        <div class="product-bottom">
+                            <span class="product-price">
+                                ${Number(p.price).toLocaleString("vi-VN")}đ
+                            </span>
+                            <span class="buy-btn">Buy Now</span>
+                        </div>
+                    </div>
+                </a>
+            `;
+        });
     });
 
     // Chỉ khởi tạo slider sau khi render xong sản phẩm

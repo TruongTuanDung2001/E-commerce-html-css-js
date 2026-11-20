@@ -4,7 +4,7 @@
     {
       "id": 1,
       "name": "Premium Dog Food",
-      "category": "Dog Food",
+      "category": "trend",
       "description": "High quality food for adult dogs.",
       "price": 450000,
       "oldPrice": 550000,
@@ -14,7 +14,7 @@
     {
       "id": 2,
       "name": "Organic Puppy Food",
-      "category": "Dog Food",
+      "category": "trend",
       "description": "Nutritious food for growing puppies.",
       "price": 320000,
       "oldPrice": 400000,
@@ -24,7 +24,7 @@
     {
       "id": 3,
       "name": "BBN Goat's Milk",
-      "category": "Dog Food",
+      "category": "trend",
       "description": "Premium goat milk for dogs.",
       "price": 250000,
       "oldPrice": 300000,
@@ -34,7 +34,7 @@
     {
       "id": 4,
       "name": "Salmon Cat Food",
-      "category": "Cat Food",
+      "category": "trend",
       "description": "Healthy salmon food for cats.",
       "price": 350000,
       "oldPrice": 420000,
@@ -44,7 +44,7 @@
     {
       "id": 5,
       "name": "Interactive Dog Toy",
-      "category": "Toys",
+      "category": "selling",
       "description": "Fun interactive toy for dogs.",
       "price": 150000,
       "oldPrice": 190000,
@@ -54,7 +54,7 @@
     {
       "id": 6,
       "name": "Pet Travel Bag",
-      "category": "Accessories",
+      "category": "sale",
       "description": "Comfortable pet travel bag.",
       "price": 650000,
       "oldPrice": 750000,
