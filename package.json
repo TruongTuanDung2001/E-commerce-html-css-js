@@ -1,0 +1,21 @@
+{
+  "name": "e-commerce-html-css",
+  "version": "1.0.0",
+  "description": "Project E-commerce use HTML-CSS Javascript by Truong Tuan Dung",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TruongTuanDung2001/E-commerce-html-css-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/TruongTuanDung2001/E-commerce-html-css-js/issues"
+  },
+  "homepage": "https://github.com/TruongTuanDung2001/E-commerce-html-css-js#readme"
+}
