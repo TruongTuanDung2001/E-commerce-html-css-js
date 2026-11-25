@@ -3,53 +3,54 @@ import {getProducts} from '../services/productService.js';
    PRODUCT DATA
 ========================= */
 
-const imageList = [
-    "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?w=600",
-    "https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=600",
-    "https://images.unsplash.com/photo-1552053831-71594a27632d?w=600",
-    "https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=600",
-    "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600",
-    "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600"
-];
+// const imageList = [
+//     "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?w=600",
+//     "https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=600",
+//     "https://images.unsplash.com/photo-1552053831-71594a27632d?w=600",
+//     "https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=600",
+//     "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600",
+//     "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600"
+// ];
 
-const productData = [
-    ["Premium Dog Food", "Dog Food", "High quality food for adult dogs.", 450000, 550000],
-    ["Organic Puppy Food", "Dog Food", "Nutritious food for growing puppies.", 320000, 400000],
-    ["BBN Goat's Milk", "Dog Food", "Premium goat milk for dogs.", 250000, 300000],
-    ["Chicken Dog Treats", "Dog Food", "Delicious chicken treats.", 120000, 150000],
-    ["Salmon Cat Food", "Cat Food", "Healthy salmon food for cats.", 350000, 420000],
-    ["Tuna Cat Food", "Cat Food", "Fresh tuna flavor for cats.", 180000, 220000],
-    ["Kitten Milk Formula", "Cat Food", "Milk formula for little kittens.", 290000, 350000],
-    ["Premium Cat Snacks", "Cat Food", "Crunchy snacks for cats.", 95000, 120000],
-    ["Interactive Dog Toy", "Toys", "Fun interactive toy for dogs.", 150000, 190000],
-    ["Cat Feather Toy", "Toys", "Feather toy to entertain cats.", 75000, 90000],
-    ["Rubber Chew Toy", "Toys", "Durable chewing toy for dogs.", 110000, 140000],
-    ["Pet Ball Set", "Toys", "Colorful balls for playful pets.", 80000, 100000],
-    ["Pet Travel Bag", "Accessories", "Comfortable pet travel bag.", 650000, 750000],
-    ["Dog Collar Premium", "Accessories", "Stylish adjustable dog collar.", 180000, 220000],
-    ["Pet Feeding Bowl", "Accessories", "Stainless steel feeding bowl.", 130000, 160000],
-    ["Pet Sleeping Bed", "Accessories", "Soft and comfortable pet bed.", 550000, 650000],
-    ["Pet Shampoo", "Healthcare", "Gentle shampoo for pet skin.", 160000, 200000],
-    ["Pet Dental Care", "Healthcare", "Daily dental care for pets.", 210000, 260000],
-    ["Flea Protection", "Healthcare", "Pet hygiene and flea care.", 380000, 450000],
-    ["Pet Grooming Brush", "Healthcare", "Professional grooming brush.", 140000, 175000],
-    ["Dog Food Premium Plus", "Dog Food", "Complete nutrition for adult dogs.", 680000, 800000],
-    ["Cat Food Indoor", "Cat Food", "Balanced food for indoor cats.", 520000, 620000],
-    ["Automatic Pet Feeder", "Accessories", "Convenient automatic feeding.", 1250000, 1500000],
-    ["Pet Health Kit", "Healthcare", "Essential daily pet care kit.", 850000, 1000000]
-];
+// const productData = [
+//     ["Premium Dog Food", "Dog Food", "High quality food for adult dogs.", 450000, 550000],
+//     ["Organic Puppy Food", "Dog Food", "Nutritious food for growing puppies.", 320000, 400000],
+//     ["BBN Goat's Milk", "Dog Food", "Premium goat milk for dogs.", 250000, 300000],
+//     ["Chicken Dog Treats", "Dog Food", "Delicious chicken treats.", 120000, 150000],
+//     ["Salmon Cat Food", "Cat Food", "Healthy salmon food for cats.", 350000, 420000],
+//     ["Tuna Cat Food", "Cat Food", "Fresh tuna flavor for cats.", 180000, 220000],
+//     ["Kitten Milk Formula", "Cat Food", "Milk formula for little kittens.", 290000, 350000],
+//     ["Premium Cat Snacks", "Cat Food", "Crunchy snacks for cats.", 95000, 120000],
+//     ["Interactive Dog Toy", "Toys", "Fun interactive toy for dogs.", 150000, 190000],
+//     ["Cat Feather Toy", "Toys", "Feather toy to entertain cats.", 75000, 90000],
+//     ["Rubber Chew Toy", "Toys", "Durable chewing toy for dogs.", 110000, 140000],
+//     ["Pet Ball Set", "Toys", "Colorful balls for playful pets.", 80000, 100000],
+//     ["Pet Travel Bag", "Accessories", "Comfortable pet travel bag.", 650000, 750000],
+//     ["Dog Collar Premium", "Accessories", "Stylish adjustable dog collar.", 180000, 220000],
+//     ["Pet Feeding Bowl", "Accessories", "Stainless steel feeding bowl.", 130000, 160000],
+//     ["Pet Sleeping Bed", "Accessories", "Soft and comfortable pet bed.", 550000, 650000],
+//     ["Pet Shampoo", "Healthcare", "Gentle shampoo for pet skin.", 160000, 200000],
+//     ["Pet Dental Care", "Healthcare", "Daily dental care for pets.", 210000, 260000],
+//     ["Flea Protection", "Healthcare", "Pet hygiene and flea care.", 380000, 450000],
+//     ["Pet Grooming Brush", "Healthcare", "Professional grooming brush.", 140000, 175000],
+//     ["Dog Food Premium Plus", "Dog Food", "Complete nutrition for adult dogs.", 680000, 800000],
+//     ["Cat Food Indoor", "Cat Food", "Balanced food for indoor cats.", 520000, 620000],
+//     ["Automatic Pet Feeder", "Accessories", "Convenient automatic feeding.", 1250000, 1500000],
+//     ["Pet Health Kit", "Healthcare", "Essential daily pet care kit.", 850000, 1000000]
+// ];
 
-const products = productData.map((item, index) => ({
-    id: index + 1,
-    name: item[0],
-    category: item[1],
-    description: item[2],
-    price: item[3],
-    oldPrice: item[4],
-    image: imageList[index % imageList.length],
-    isFavorite: false
-}));
+// const products = productData.map((item, index) => ({
+//     id: index + 1,
+//     name: item[0],
+//     category: item[1],
+//     description: item[2],
+//     price: item[3],
+//     oldPrice: item[4],
+//     image: imageList[index % imageList.length],
+//     isFavorite: false
+// }));
 
+let products = [];
 
 /* =========================
    DOM ELEMENTS
@@ -94,7 +95,38 @@ let currentPage = 1;
 
 const productsPerPage = 6;
 
-let filteredProducts = [...products];
+let filteredProducts = [];
+
+async function initProducts(){
+    products = await getProducts();
+    
+    //handle product 
+    products = products.map((item, index) => ({
+    id: item.id,
+    name: item.name,
+    category: item.category,
+    description: item.description,
+    price: item.price,
+    oldPrice: item.oldPrice,
+    image: item.image,
+    isFavorite: false
+    }));
+
+    filteredProducts = [...products]; // tạo ra 1 bản sao của mảng products nên là có thể sàng lọc dữ liệu mà không ảnh hưởng đến dữ liệu gốc
+    return filteredProducts;
+}
+
+// đợi dữ liệu api xong thì sẽ chạy dữ liệu
+async function start(){
+    await initProducts();
+    console.log(filteredProducts);
+    
+    //render products
+    renderProducts();
+}
+
+start();
+
 
 let activeFilters = {
     maxPrice: 2000000,
