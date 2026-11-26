@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account | Pet Shop</title>
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <main class="auth-container">
+
+        <!-- Left Banner -->
+        <section class="auth-banner">
+            <a href="../index.html" class="brand">
+                <i class="fa-solid fa-paw"></i>
+                <span>Petly.</span>
+            </a>
+
+            <div class="banner-content">
+                <span class="banner-tag">PET LOVERS COMMUNITY</span>
+                <h1>Everything your pet needs, all in one place.</h1>
+                <p>
+                    Discover lovely products and give your furry
+                    friends the care and happiness they deserve.
+                </p>
+            </div>
+
+            <div class="banner-bottom">
+                <div class="avatar-group">
+                    <span>🐶</span>
+                    <span>🐱</span>
+                    <span>🐰</span>
+                </div>
+                <p>Made with love for every pet.</p>
+            </div>
+        </section>
+
+        <!-- Right Form -->
+        <section class="auth-content">
+
+            <a href="../index.html" class="mobile-brand">
+                <i class="fa-solid fa-paw"></i> Petly.
+            </a>
+
+            <div class="auth-box">
+
+                <div class="auth-heading">
+                    <span class="welcome-icon">🐾</span>
+                    <h2 id="authTitle">Welcome back!</h2>
+                    <p id="authDescription">
+                        Login to continue your pet shopping journey.
+                    </p>
+                </div>
+
+                <!-- Login Form -->
+                <form id="loginForm" class="auth-form">
+
+                    <div class="form-group">
+                        <label for="loginEmail">Email address</label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-envelope"></i>
+                            <input
+                                type="email"
+                                id="loginEmail"
+                                placeholder="example@email.com"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock"></i>
+                            <input
+                                type="password"
+                                id="loginPassword"
+                                placeholder="Enter your password"
+                                required
+                            >
+                            <button type="button" class="toggle-password"
+                                data-target="loginPassword">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="remember">
+                            <input type="checkbox" id="rememberMe">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#" class="forgot-password">Forgot password?</a>
+                    </div>
+
+                    <p class="form-message" id="loginMessage"></p>
+
+                    <button type="submit" class="submit-btn">
+                        Sign In <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                    <div class="auth-switch">
+                        Don't have an account?
+                        <button type="button" id="showRegister">Sign up</button>
+                    </div>
+                </form>
+
+                <!-- Register Form -->
+                <form id="registerForm" class="auth-form hidden">
+
+                    <div class="form-group">
+                        <label for="registerName">Full name</label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-user"></i>
+                            <input
+                                type="text"
+                                id="registerName"
+                                placeholder="Your full name"
+                                required
+                                minlength="2"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registerEmail">Email address</label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-envelope"></i>
+                            <input
+                                type="email"
+                                id="registerEmail"
+                                placeholder="example@email.com"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registerPassword">Password</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock"></i>
+                            <input
+                                type="password"
+                                id="registerPassword"
+                                placeholder="At least 6 characters"
+                                minlength="6"
+                                required
+                            >
+                            <button type="button" class="toggle-password"
+                                data-target="registerPassword">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm password</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock"></i>
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                placeholder="Re-enter your password"
+                                required
+                            >
+                            <button type="button" class="toggle-password"
+                                data-target="confirmPassword">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <p class="form-message" id="registerMessage"></p>
+
+                    <button type="submit" class="submit-btn">
+                        Create Account
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                    <div class="auth-switch">
+                        Already have an account?
+                        <button type="button" id="showLogin">Sign in</button>
+                    </div>
+                </form>
+
+                <div class="auth-footer">
+                    By continuing, you agree to our
+                    <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script type="module" src="../js/auth.js"></script>
+</body>
+</html>
