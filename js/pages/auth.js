@@ -1,8 +1,7 @@
 import {getUsers} from "../services/userService.js";
 // const USER_API = "http://localhost:3001/users";
 
-const allUser = getUsers();
-console.log(allUser);
+let allUser = [];
 
 // DOM
 const loginForm = document.querySelector("#loginForm");
@@ -246,6 +245,13 @@ function showMessage(element, message, type) {
 //     }
 // });
 
+initAuth();
+//init auth
+async function initAuth(){
+    allUser = await getUsers();
+
+    login();
+}
 
 // 
 function login(){
@@ -255,9 +261,8 @@ function login(){
 
     loginForm.addEventListener("submit", function(e){
         e.preventDefault();
-
+        console.log(allUser);
+        
         
     })
 }
-
-login();
