@@ -1,5 +1,8 @@
+import {getUsers} from "../services/userService.js";
+// const USER_API = "http://localhost:3001/users";
 
-const USER_API = "http://localhost:3001/users";
+const allUser = getUsers();
+console.log(allUser);
 
 // DOM
 const loginForm = document.querySelector("#loginForm");
@@ -242,3 +245,19 @@ function showMessage(element, message, type) {
 //         );
 //     }
 // });
+
+
+// 
+function login(){
+    const loginEmail = document.getElementById("loginEmail");
+
+    const loginPassword = document.getElementById("loginPassword");
+
+    loginForm.addEventListener("submit", function(e){
+        e.preventDefault();
+
+        
+    })
+}
+
+login();
